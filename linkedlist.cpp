@@ -115,6 +115,15 @@ int LinkedList::get(int index)
 //private 
 void LinkedList::deleteNodes(node* head)
 {
+  node* iterate = head;
+  while(iterate != nullptr) {
+    head = iterate->next;
+    delete iterate;
+    iterate = head;
+  }
+
+
+
   //keep going until the next pointer is empty
   if(head != nullptr) {
     //move to next pointer and once done, delete pointers from last to 
